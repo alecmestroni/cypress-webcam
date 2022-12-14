@@ -1,13 +1,12 @@
 /// <reference types="cypress" />
 
-describe('webcam spec', // {
-// 	baseUrl: 'https://mobilecapture-stage.infocert.it/home?companyId=Demo&dossierId=lGj1aw8XrNa4k6M74YDq'
-// 		,
-// },
-() => {
+describe('webcam spec', { testIsolation: false }, () => {
+	it('Visit GOOGLE', () => {
+		cy.visit('www.google.com', { failOnStatusCode: false })
+	})
 	it('Visit MoCa', () => {
 		cy.visit(
-			'https://mobilecapture-stage.infocert.it/home?companyId=Demo&dossierId=lGj1aw8XrNa4k6M74YDq',
+			'https://mobilecapture-stage.infocert.it/home?companyId=Demo&dossierId=gQ612yX7kx5drOpmwWZx',
 			{ failOnStatusCode: false }
 		)
 	})

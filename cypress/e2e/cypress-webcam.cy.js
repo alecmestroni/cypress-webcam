@@ -1,6 +1,13 @@
 /// <reference types="cypress" />
 
 describe('webcam spec', { testIsolation: false }, () => {
+	beforeEach(() => {
+		cy.on('window:load', win => {
+			win.parent.document
+				.querySelector('.aut-iframe') // this selector is rather empirical
+				.setAttribute('allow', 'camera;microphone')
+		})
+	})
 	it('Visit GOOGLE', () => {
 		cy.visit('www.google.com', { failOnStatusCode: false })
 	})
